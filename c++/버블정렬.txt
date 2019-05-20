@@ -1,0 +1,15 @@
+for (int i = 0; i < 100; ++i) {
+	int pivotIdx = 0,j = 1;
+	while (numCase[j][0] != 101) {
+		if (numCase[pivotIdx][0] < numCase[j][0]) pivotIdx = j;
+		else {
+			int a = numCase[j][0], b = numCase[j][1];
+			numCase[j][0] = numCase[pivotIdx][0];
+			numCase[j][1] = numCase[pivotIdx][1];
+			numCase[pivotIdx][0] = a;
+			numCase[pivotIdx][1] = b;
+			pivotIdx = j;
+		}
+		++j;
+	}
+}
